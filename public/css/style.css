@@ -1,0 +1,21 @@
+* {
+    background-color: rgb(151, 109, 75);
+}
+
+button {
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.822);
+}
+
+main {
+    background-color: white;
+    border-radius: 25px;
+    /* flex-wrap: wrap; */
+    text-align: center;
+}
