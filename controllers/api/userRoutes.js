@@ -6,8 +6,8 @@ router.post('/', async (req, res) => {
         const userData = await User.create(req.body);
     
         req.session.save(() => {
-            req.session.user_id = userData.isSoftDeleted;
-            req.session.logged_in = true;
+            req.session.userId = userData.isSoftDeleted;
+            req.session.loggedIn = true;
 
             res.status(200).json(userData);
         })
@@ -17,34 +17,38 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    try {
-        const userData = await User.findOne({ where: { email: req.body.email}});
-
+    console.log(req.body)
+    // try {
+        // const userData = await User.findOne({ where: { username: req.body.username}});
+        console.log('hey, me')
+        const userData = await User.findOne({ where: { username: 'heather123'}});
+// console.log(userData)
         if(!userData) {
-            res.status(400).json({ message: 'Incorrect email or password, please try again.'});
+            res.status(400).json({ message: 'Incorrect username or password, please try again.'});
             return;
         }
 
-        const correctPass = await userData.checkPassword(req.body.password);
+        const correctPass = await userData.checkPassword('heather123');
+        // const correctPass = await userData.checkPassword(req.body.password);
 
         if (!correctPass) {
-            res.status(400).json({ message: 'Incorrect email of password, please try again.' });
+            res.status(400).json({ message: 'Incorrect username of password, please try again.' });
             return;
         }
 
         req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
+            req.session.userId = userData.id;
+            req.session.loggedIn = true;
 
             res.json({ user: userData, message: 'You have successfully logged in!' });
         })
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // } catch (err) {
+        // res.status(400).json(err);
+    // }
 });
 
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         })

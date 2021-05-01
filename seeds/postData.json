@@ -1,10 +1,10 @@
 [
     {
-        "name": "The incredible handlebars",
-        "description": "Handlebars was definitely a bit confusing at first but it's pretty cool now that I'm starting to understand it better!"
+        "title": "The incredible handlebars",
+        "body": "Handlebars is messing me up!"
     }, 
     {
-        "name": "Jiving with JavaScript",
-        "description": "The posibilities are endless!"
+        "title": "Jiving with JavaScript",
+        "body": "The posibilities are endless!"
     }
 ]

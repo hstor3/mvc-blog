@@ -1,0 +1,17 @@
+[
+    {
+        "body": "What a great post!",
+        "userId": 1,
+        "postId": 1
+    },
+    {
+        "body": "What a great post!",
+        "userId": 2,
+        "postId": 2
+    },
+    {
+        "body": "What a great post!",
+        "userId": 1,
+        "postId": 2
+    }
+]
