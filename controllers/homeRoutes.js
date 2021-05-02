@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    // try {
         const postData = await Post.findAll({
             include: [ 
                 {
@@ -12,49 +11,48 @@ router.get('/', async (req, res) => {
                 },
             ], 
         });
-        const posts = postData.map((post) => post.get({ plain: true }));
-        console.log(posts)
+        const posts = postData.map((post) => post.get({ plain: true }))
 
         res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn
         })
-    // } catch (err) {
-        // res.status(500).json(err);
-    // }
 });
 
-router.get('/posts', async (req, res) => {
-    // alert();
-    console.log('hey')
+router.get('/posts', withAuth, async (req, res) => {
     res.render('posts', {
         loggedIn: req.session.loggedIn
     })
 });
 
-router.get('/:id', async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.userId, {
+router.get('/post/:id', async (req, res) => {
+    // try {
+        const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
                     // attributes: ['username'],
                     attributes: ['id'],
-
+                    
+                },
+                {
+                    model: Comment,
+                    attributes: ['id', 'body']
                 },
             ],
-        
+            
         });
-
+        
+        // console.log(postData)
         const post = postData.get({ plain: true });
-
-        res.render('posts', {
-            ...post,
+        console.log(post)
+        res.render('edit_post', {
+            post,
             loggedIn: req.session.loggedIn
         });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
 });
 
 router.get('homepage', withAuth, async (req, res) => {
@@ -77,7 +75,7 @@ router.get('homepage', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/homepage');
+        res.redirect('/');
         return;
     }
     res.render('login');

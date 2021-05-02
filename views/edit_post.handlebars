@@ -1,0 +1,36 @@
+<div class="row mb-4 post">
+  <div class="col-md-5">
+    <h2>
+      {{post.title}}
+    </h2>
+  </div>
+  <div class="col-md-7">
+    {{format_time post.createdAt}}
+      {{post.body}}
+      <br>
+ <div id="comment-body">
+ <div class="comments">
+        <label for="comment-title">What would you like to say about this post?</label>
+        <input class="comment-input" />
+ </div>
+      <div class="comment">
+        <button class="btn btn-primary" id="confirm-comment" type="submit">Comment!</button>
+      </div>
+</div>
+      <button class="post-deleter" id={{post.id}}>
+        Delete post
+      </button>
+  </div>
+<div>HIiiii</div>
+{{#each post.Comments as |comment| }}
+<div>{{comment.body}}</div>
+{{/each}}
+</div>
+
+
+
+<input type="hidden" value={{post.id}} id="post_id" />
+
+
+{{!-- <script src="./js/post.js"></script> --}}
+{{!-- <script src="../js/comment.js"></script> --}}

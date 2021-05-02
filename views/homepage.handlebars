@@ -6,9 +6,12 @@
     </h2>
   </div>
   <div class="col-md-7">
-    {{post.createdAt}}
+    {{format_time post.createdAt}}
     <p>
       {{post.body}}
+      <br>
+      {{!-- <button class="post-commenter">Comment</button> --}}
+      {{!-- <a class="post-deleter" href="/post/{{post.id}}">Delete</a> --}}
     </p>
   </div>
 </div>

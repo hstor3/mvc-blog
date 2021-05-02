@@ -1,13 +1,13 @@
 const newPost = async (e) => {
     e.preventDefault();
 
-    console.log('foeiauralkj')
+    // console.log('foeiauralkj')
     const title = document.querySelector('.post-input').value.trim();
     const body = document.querySelector('.post-body').value.trim();
     console.log(title, body)
-
+    
     if (title && body) {
-        const response = await fetch(`/api/posts`, {
+        const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({ title, body }),
             headers: { 'Content-Type': 'application/json' },
@@ -21,22 +21,31 @@ const newPost = async (e) => {
     }
 };
 
-// const deleteButtons = async (e) => {
-//     if (e.target.hasAttribute('')) {
+const deleteButton = async (e) => {
+    // if (e.target.hasAttribute('')) {
 
-//         const id = e.target.getAttribute('data.id');
-//         const response = await fetch(`/api/posts/${id}`, {
+        const id = e.target.getAttribute('id');
+        const response = await fetch(`/api/posts/${id}`, {
 
-//             method: 'DELETE',
-//         });
+            method: 'DELETE',
+        });
 
-//         if (response.ok) {
-//             document.location.replace('/')
-//         } else {
-//             alert(response.statusText);
-//         }
-//     }
-// }
+        if (response.ok) {
+            document.location.replace('/')
+        // } else {
+            // alert(response.statusText);
+        // }
+    }
+}
+let confirmPost = document.querySelector('#confirm-post');
+if (confirmPost) {
+    confirmPost.addEventListener('click', newPost)
+};
 
-document.querySelector('#confirm-post').addEventListener('click', newPost);
-// document.querySelector('.posts').addEventListener('click', deleteButton);
+let deletePost = document.querySelector('.post-deleter');
+if (deletePost) {
+    deletePost.addEventListener('click', deleteButton)
+};
+
+// document.querySelector('#confirm-post').addEventListener('click', newPost);
+// document.querySelector('.post-deleter').addEventListener('click', deleteButton);

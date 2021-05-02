@@ -2,18 +2,18 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
-    try {
+    // try {
         const userData = await User.create(req.body);
     
         req.session.save(() => {
-            req.session.userId = userData.isSoftDeleted;
+            req.session.userId = userData.id;
             req.session.loggedIn = true;
 
             res.status(200).json(userData);
         })
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // } catch (err) {
+        // res.status(400).json(err);
+    // }
 });
 
 router.post('/login', async (req, res) => {
@@ -21,14 +21,14 @@ router.post('/login', async (req, res) => {
     // try {
         // const userData = await User.findOne({ where: { username: req.body.username}});
         console.log('hey, me')
-        const userData = await User.findOne({ where: { username: 'heather123'}});
+        const userData = User.findOne({ where: { username: req.body.username}});
 // console.log(userData)
         if(!userData) {
             res.status(400).json({ message: 'Incorrect username or password, please try again.'});
             return;
         }
 
-        const correctPass = await userData.checkPassword('heather123');
+        const correctPass = userData.checkPassword(req.body.password);
         // const correctPass = await userData.checkPassword(req.body.password);
 
         if (!correctPass) {
