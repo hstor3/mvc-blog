@@ -1,5 +1,3 @@
-// let post = ('/post')
-
 const newComment = async (e) => {
     e.preventDefault();
 

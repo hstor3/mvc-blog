@@ -10,9 +10,6 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // createdAt: {
-
-    // },
     body: {
       type: DataTypes.STRING,
     },
@@ -27,10 +24,7 @@ Post.init(
   },
   {
     sequelize,
-    // timestamps: false,
-    // freezeTableName: true,
-    // underscored: true,
-    // modelName: 'User',
+    // modelName: 'post',
   }
 );
 

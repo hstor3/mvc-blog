@@ -1,7 +1,6 @@
 const newPost = async (e) => {
     e.preventDefault();
 
-    // console.log('foeiauralkj')
     const title = document.querySelector('.post-input').value.trim();
     const body = document.querySelector('.post-body').value.trim();
     console.log(title, body)
@@ -22,7 +21,6 @@ const newPost = async (e) => {
 };
 
 const deleteButton = async (e) => {
-    // if (e.target.hasAttribute('')) {
 
         const id = e.target.getAttribute('id');
         const response = await fetch(`/api/posts/${id}`, {
@@ -32,9 +30,6 @@ const deleteButton = async (e) => {
 
         if (response.ok) {
             document.location.replace('/')
-        // } else {
-            // alert(response.statusText);
-        // }
     }
 }
 let confirmPost = document.querySelector('#confirm-post');
@@ -46,6 +41,3 @@ let deletePost = document.querySelector('.post-deleter');
 if (deletePost) {
     deletePost.addEventListener('click', deleteButton)
 };
-
-// document.querySelector('#confirm-post').addEventListener('click', newPost);
-// document.querySelector('.post-deleter').addEventListener('click', deleteButton);

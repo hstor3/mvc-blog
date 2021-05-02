@@ -1,6 +1,5 @@
 * {
     scrollbar-width: 0%;
-    /* position: absolute; */
 }
 
 nav {
@@ -9,11 +8,9 @@ nav {
     margin: auto;
     border-radius: 5px;
     position: relative;
-    /* font-size: 5px; */
 }
 
 a {
-    position: relative;
     padding: 5px;
     text-decoration: none;
     color: black;
@@ -28,7 +25,6 @@ a:hover {
 }
 
 button {
-    position: relative;
     padding: 5px;
     border: none;
     border-radius: 5px;
@@ -42,19 +38,11 @@ button:hover {
 }
 
 main {
-    position: relative;
     flex-wrap: wrap;
     text-align: center;
 }
 
-/* #post-body { */
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* margin: auto; */
-/* } */
-
 .posts {
-    position: relative;
     padding-top: 1%;
     padding-bottom: 5%;
     padding-left: 15%;
@@ -63,14 +51,9 @@ main {
     margin-top: 0.5%;
     margin-bottom: 0.5%;
     flex-direction: column;
-    /* display: inline-block; */
-    /* margin-left: 15px; */
-    /* margin-right: 15px; */
-    
 }
 
 .post-input-title {
-    position: relative;
     background-color: ivory;
     float: left;
     border-radius: 5px;
@@ -80,7 +63,6 @@ main {
 }
 
 .post-body-input {
-    position: relative;
     background-color: ivory;
     float: right;
     border-radius: 5px;
@@ -90,14 +72,12 @@ main {
 }
 
 .posts label {
-    position: relative;
     font-weight: bolder;
     font-size: 20px;
     float: left;
 }
 
 .posts input {
-    position: relative;
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -110,7 +90,6 @@ main {
 }
 
 #confirm-post {
-    position: relative;
     margin-top: 1%;
     padding: 15px;
     border: 1px solid black;
@@ -119,13 +98,12 @@ main {
 }
 
 #confirm-post:hover {
-      cursor: pointer;
+    cursor: pointer;
     background-color: cadetblue;
     border-radius: 5px;
 }
 
 .homepage-posts {
-    position: relative;
     background-color: ivory;
     margin-top: 0.5%;
     border-radius: 5px;
@@ -135,22 +113,15 @@ main {
 }
 
 .login-form {
-    position: relative;
     background-color: ivory;
-    /* float: left; */
     border-radius: 5px;
     border: 1px solid black;
-    /* padding: 10%; */
-    /* margin: auto; */
     margin-top: 0.5%;
-
 }
 
 .login-form button {
-    position: relative;
     margin-top: 1%;
     margin-bottom: 1%;
-
     padding: 15px;
     border: 1px solid black;
     border-radius: 5px;
@@ -158,8 +129,6 @@ main {
 }
 
 .login-form input {
-    position: relative;
-    /* width: 100%; */
     margin: auto;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -170,22 +139,16 @@ main {
     resize: both;
     font-size: 17px;
     margin-bottom: 1%;
-
 }
 
 .signup-form {
-    position: relative;
     background-color: ivory;
-    /* float: left; */
     border-radius: 5px;
     border: 1px solid black;
-    /* padding: 10%; */
-    /* margin: auto; */
     margin-top: 0.5%;
 }
 
 .signup-form button {
-    position: relative;
     margin-top: 1%;
     margin-bottom: 1%;
     padding: 15px;
@@ -195,8 +158,6 @@ main {
 }
 
 .signup-form input {
-    position: relative;
-    /* width: 100%; */
     margin: auto;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -210,7 +171,6 @@ main {
 }
 
 .post-section-body {
-    position: relative;
     background-color: ivory;
     margin-top: 0.5%;
     border-radius: 5px;
@@ -220,20 +180,17 @@ main {
 }
 
 .post-section-body h2 {
-    position: relative;
     padding-top: 3vw;
     text-decoration: underline;
 }
 
 .time-body {
-    position: relative;
     margin-top: 1vw;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.712);
 }
 
 .post-deleter {
-    position: relative;
     margin-top: 1%;
     padding: 15px;
     border: 1px solid black;
@@ -242,27 +199,20 @@ main {
 }
 
 #comment-body {
-    position: relative;
     background-color: ivory;
     margin-top: 0.5%;
     border-radius: 5px;
     margin-left: 15%;
     margin-right: 15%;
-    /* padding: 3px; */
     padding-bottom: 15px;
     padding-top: 15px;
 }
 
 #comment-body label {
-    position: relative;
-    /* margin-top: 0.5%; */
     font-weight: bolder;
-    /* text-decoration: underline; */
-    /* padding: 13px; */
 }
 
 .comment-input {
-    position: relative;
     margin: auto;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -277,7 +227,6 @@ main {
 }
 
 #confirm-comment {
-    position: relative;
     margin-top: 1%;
     padding: 15px;
     border: 1px solid black;
@@ -286,7 +235,6 @@ main {
 }
 
 .posted-comments {
-    position: relative;
     background-color: ivory;
     margin-top: 0.5%;
     border-radius: 5px;

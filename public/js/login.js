@@ -23,7 +23,6 @@ const signup = async (e) => {
     e.preventDefault();
 
     const username = document.querySelector('#signup-username').value.trim();
-    // const email = document.querySelector('#signup-email').value.trim();
     const password = document.querySelector('#signup-password').value.trim();
 
     if (username && password) {
@@ -40,9 +39,6 @@ const signup = async (e) => {
         }
     }
 }
-
-// let logForm = document.querySelector('.login-form');
-// if 
 
 document.querySelector('.login-form').addEventListener('submit', loginForm);
 document.querySelector('.signup-form').addEventListener('submit', signup);

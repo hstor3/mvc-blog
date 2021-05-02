@@ -31,9 +31,7 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    // attributes: ['username'],
                     attributes: ['id'],
-                    
                 },
                 {
                     model: Comment,
@@ -43,20 +41,15 @@ router.get('/post/:id', async (req, res) => {
             
         });
         
-        // console.log(postData)
         const post = postData.get({ plain: true });
         console.log(post)
         res.render('edit_post', {
             post,
             loggedIn: req.session.loggedIn
         });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
 });
 
 router.get('homepage', withAuth, async (req, res) => {
-    // try {
         const userData = await User.findByPk(req.session.userId, {
             attributes: { exclude: ['password'] },
             include: [{ model: Post }],
@@ -67,10 +60,7 @@ router.get('homepage', withAuth, async (req, res) => {
         res.render('homepage', {
             ...user,
             loggedIn: true
-        });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+        })
 });
 
 router.get('/login', (req, res) => {

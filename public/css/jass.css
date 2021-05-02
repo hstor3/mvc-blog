@@ -34,6 +34,5 @@ body {
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    /* background-color: #a8bbbf; */
     background-image: linear-gradient(rgb(86, 57, 252), rgb(248, 131, 209));
   }
