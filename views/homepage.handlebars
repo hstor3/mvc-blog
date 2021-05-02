@@ -1,4 +1,5 @@
 {{#each posts as |post| }}
+<div class="homepage-posts">
 <div class="row mb-4 post">
   <div class="col-md-5">
     <h2>
@@ -10,9 +11,8 @@
     <p>
       {{post.body}}
       <br>
-      {{!-- <button class="post-commenter">Comment</button> --}}
-      {{!-- <a class="post-deleter" href="/post/{{post.id}}">Delete</a> --}}
     </p>
   </div>
+</div>
 </div>
 {{/each}}

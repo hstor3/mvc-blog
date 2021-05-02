@@ -1,21 +1,110 @@
 * {
-    background-color: rgb(255, 240, 227);
+    scrollbar-width: 0%;
+}
+
+nav {
+    background-color: darkgoldenrod;
+    padding: 15px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+a {
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: cadetblue;
 }
 
 button {
+    padding: 5px;
     border: none;
-    background-color: white;
     border-radius: 5px;
+    background-color: transparent;
+    font-weight: bolder;
 }
 
 button:hover {
     cursor: pointer;
-    background-color: rgba(255, 240, 227, 0.685);
+    background-color: cadetblue;
 }
 
 main {
-    background-color: white;
-    border-radius: 25px;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     text-align: center;
+}
+
+.posts {
+    padding-top: 1%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 5px;
+    margin-top: 0.5%;
+    
+}
+
+.post-input-title {
+    background-color: ivory;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10%;
+    margin: auto;
+}
+
+.post-body-input {
+    background-color: ivory;
+    float: right;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10%;
+    margin: auto;
+}
+
+.posts label {
+    font-weight: bolder;
+    font-size: 20px;
+    float: left;
+}
+
+.posts input {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    display: block;
+    resize: both;
+    font-size: 17px;
+}
+
+#confirm-post {
+    margin-top: 1%;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: darkgoldenrod;
+}
+
+#confirm-post:hover {
+      cursor: pointer;
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+
+.homepage-posts {
+    background-color: ivory;
+    margin-top: 0.5%;
+    border-radius: 5px;
+    margin-left: 15%;
+    margin-right: 15%;
 }
