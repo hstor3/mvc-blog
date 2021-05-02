@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-[Screenshot](public/blog.gif)
+![Screenshot](public/blog.gif)
 
 ## About 
 
