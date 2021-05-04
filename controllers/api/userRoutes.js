@@ -13,13 +13,13 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    // console.log(req.body)
-        const userData = User.findOne({ where: { username: req.body.username}});
+    console.log(req.body)
+        const userData = await User.findOne({ where: { username: req.body.username}});
         if(!userData) {
             res.status(400).json({ message: 'Incorrect username or password, please try again.'});
             return;
         }
-
+console.log(userData)
         const correctPass = userData.checkPassword(req.body.password);
 
         if (!correctPass) {

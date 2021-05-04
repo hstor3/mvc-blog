@@ -1,16 +1,18 @@
-const loginForm = async (e) => {
+const loginForm = async function(e) {
     e.preventDefault();
 
     const username = document.querySelector('#username').value.trim();
     const password = document.querySelector('#password').value.trim();
+console.log(username)
+console.log(password)
 
     if (username && password) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
-            headers: { 'Content-Type': 'applocation/json' },
+            body: JSON.stringify({ username:username, password:password }),
+            headers: { 'Content-Type': 'application/json' },
         });
-
+        console.log(response)
         if (response.ok) {
             document.location.replace('/')
         } else {

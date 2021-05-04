@@ -58,7 +58,7 @@ router.put('/:id', (req, res) => {
 })
 
 router.put('/', async (req, res) => {
-    alert('hi')
+    // alert('hi')
     res.redirect('/posts');
     return;
 })
