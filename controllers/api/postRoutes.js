@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/post/:id/comments', withAuth, (req, res) => {
+router.get('/posts/:id/comments', withAuth, async (req, res) => {
     res.render('comments', {
         loggedIn: req.session.loggedIn
     })
 });
 
-router.get('/post/comments/:id', async (req, res) => {
+router.get('/posts/comments/:id', async (req, res) => {
     const commentData = await Comment.findByPk(req.params.id, {
         include: [
             {
