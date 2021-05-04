@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/post/:id/comments', withAuth, async (req, res) => {
+router.get('/post/:id/comments', withAuth, (req, res) => {
     res.render('comments', {
         loggedIn: req.session.loggedIn
     })
@@ -64,7 +64,7 @@ router.put('/', async (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    console.log('try to delete post')
+    // console.log('try to delete post')
         Post.destroy({
             where: {
                 id: req.params.id,

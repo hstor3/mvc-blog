@@ -19,11 +19,11 @@ router.get('/', async (req, res) => {
         })
 });
 
-router.get('/posts', withAuth, async (req, res) => {
-    res.render('posts', {
-        loggedIn: req.session.loggedIn
-    })
-});
+// router.get('/posts', withAuth, async (req, res) => {
+//     res.render('posts', {
+//         loggedIn: req.session.loggedIn
+//     })
+// });
 
 router.get('/post/:id', async (req, res) => {
     // try {

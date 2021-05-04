@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'Incorrect username or password, please try again.'});
             return;
         }
-console.log(userData)
+// console.log(userData)
         const correctPass = userData.checkPassword(req.body.password);
 
         if (!correctPass) {
