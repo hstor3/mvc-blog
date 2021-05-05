@@ -24,11 +24,15 @@ This is a blog posting app! You can browse through existing blogs, add additiona
 
 2. Install NPM packages
 
-> npm install
+```sh
+npm install
+```
 
 3. Run seeds files
 
-> npm run seed
+```sh
+npm run seed
+```
 
 ## Contributing
 
