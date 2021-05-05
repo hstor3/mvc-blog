@@ -1,8 +1,10 @@
 # MVC Blog
 
-## Screenshot
+## Screenshot/Link
 
 ![Screenshot](public/blog.gif)
+
+[https://warm-bayou-06994.herokuapp.com/](https://warm-bayou-06994.herokuapp.com/)
 
 ## About 
 
